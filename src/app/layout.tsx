@@ -6,6 +6,9 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'JAVASCRIPT EN MÉXICO',
   description: 'Javascript en México',
+  icons: {
+    icon: '/favicon.png',
+  },
 }
 
 export default function RootLayout({
