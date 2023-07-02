@@ -26,10 +26,6 @@ module.exports = {
       'gray': '#6e6e6e',
       'gray-light': '#c7c7c7',
     },
-    fontFamily: {
-      sans: ['Rajdhani', 'sans-serif'],
-      serif: ['Merriweather', 'serif'],
-    },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
       sm: ['0.875rem', { lineHeight: '1.25rem' }],
@@ -68,7 +64,11 @@ module.exports = {
       },
       borderRadius: {
         '4xl': '2rem',
-      }
+      },
+      fontFamily: {
+        sans: ['var(--font-rajdhani)', 'sans-serif'],
+        serif: ['var(--font-rajdhani)', 'sans-serif'],
+      },
     },
   },
   plugins: [],
