@@ -3,7 +3,7 @@ import { Rajdhani } from 'next/font/google'
 
 const rajdhani = Rajdhani({ 
   subsets: ['latin'],
-  weight:["300"],
+  weight:["300", "500", "700"],
   variable: '--font-rajdhani',
 })
 
