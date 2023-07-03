@@ -22,7 +22,3 @@ body {
   color: rgb(var(--foreground-rgb));
   background: #ebd02f;
 }
-
-h1 {
-  color: #333;
-}
