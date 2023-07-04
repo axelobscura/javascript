@@ -8,14 +8,14 @@ const rajdhani = Rajdhani({
 })
 
 export const metadata = {
-  title: 'JAVASCRIPT ARTÍCULOS',
+  title: 'JAVASCRIPT ARTÍCULOS NOTICIAS Y TUTORIALES',
   description: 'Sitio web de desarrollo de JavaScript: Aprende, crea y domina el mundo de JavaScript. Descubre tutoriales, guías y recursos para desarrollar aplicaciones web, juegos y mucho más. Mantente al día con las últimas técnicas y tendencias en el ámbito del desarrollo de JavaScript.',
   icons: {
     icon: '/favicon.png',
   },
 }
 
-export default function RootLayout({
+export default function Layout({
   children,
 }: {
   children: React.ReactNode
