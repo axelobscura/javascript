@@ -10,8 +10,8 @@ export default function Home() {
         </div>
         <p className='text-2xl font-light font-sans text-gray-dark text-center pt-2'>Desbloquea el Poder de JavaScript<br/>Sitios Web con Experiencias Dinámicas e Interactivas</p>
         <ul className="flex p-3">
-          <li className="p-2"><BsHCircleFill/></li>
-          <li className="p-2"><BsFillRecordCircleFill/></li>
+          <li className="p-2"><BsHCircleFill size={'2em'} style={{'color':'#111'}}/></li>
+          <li className="p-2"><BsFillRecordCircleFill size={'2em'} style={{'color':'#111'}}/></li>
         </ul>
       </div>
     </main>
