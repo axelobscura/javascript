@@ -9,9 +9,9 @@ export default function Home() {
           <h3 className='font-sans text-5xl font-light p-3'>LATINOAMÉRICA</h3>
         </div>
         <p className='text-2xl font-light font-sans text-gray-dark text-center pt-2'>Desbloquea el Poder de JavaScript<br/>Sitios Web con Experiencias Dinámicas e Interactivas</p>
-        <ul>
-          <li><BsHCircleFill/></li>
-          <li><BsFillRecordCircleFill/></li>
+        <ul className="flex p-3">
+          <li className="p-2"><BsHCircleFill/></li>
+          <li className="p-2"><BsFillRecordCircleFill/></li>
         </ul>
       </div>
     </main>
