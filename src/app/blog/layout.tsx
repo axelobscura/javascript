@@ -21,9 +21,15 @@ export default function Layout({
   children: React.ReactNode
 }) {
   return (
-    <div className={rajdhani.className}>
-      <h2>Artículos sobre javascript</h2>
-      {children}
+    <div className={`container ${rajdhani.className}`}>
+      <div className="grid grid-cols-6">
+        <div className='menu_categorias'>
+          <h2>Artículos sobre javascript</h2>
+        </div>
+        <div className='col-span-5'>
+          {children}
+        </div>
+      </div>
     </div>
   )
 }

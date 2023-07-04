@@ -22,3 +22,7 @@ body {
   color: rgb(var(--foreground-rgb));
   background: #ebd02f;
 }
+
+.menu_categorias {
+  background: #111;
+}
