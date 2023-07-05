@@ -22,14 +22,8 @@ export default function Layout({
 }) {
   return (
     <div className={`container-fluid ${rajdhani.className}`}>
-      <div className="grid grid-cols-6">
-        <div className='menu_categorias'>
-        </div>
-        <div className='col-span-4 contenido_articulos'>
-          {children}
-        </div>
-        <div className='menu_categorias'>
-        </div>
+      <div className="grid contacto grid-cols-12">
+        {children}
       </div>
     </div>
   )
