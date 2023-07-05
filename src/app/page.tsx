@@ -1,11 +1,23 @@
 import Link from "next/link";
 import { BsFillRecordCircleFill, BsHCircleFill } from "react-icons/bs";
 
-export default function Home() {
+async function getData() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/todos');
+  return res.json();
+}
+
+export default async function Home() {
+  const table = await getData();
+  console.log('table: ',table);
   return (
     <main className="flex min-h-screen">
       <div className="relative flex flex-col items-center justify-center min-h-screen w-screen">
         <h1 className='text-gray-dark text-9xl font-light font-sans'>JAVASCRIPT</h1>
+        <ul>
+      {table.map((todo: any) => (
+        <li key={todo.id}>{todo.title}</li>
+      ))}
+    </ul>
         <ul className="flex p-3">
           <li className="p-2">
             <Link href="/blog">
