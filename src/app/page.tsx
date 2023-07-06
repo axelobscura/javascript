@@ -5,12 +5,7 @@ import { BsFillRecordCircleFill, BsHCircleFill } from "react-icons/bs";
 // d6e94ae6348c44ab9b20c475613aae01
 async function getData() {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
- 
-  // Recommendation: handle errors
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
     throw new Error('Failed to fetch data')
   }
  
@@ -27,7 +22,7 @@ export default async function Home() {
         <h1 className='text-gray-dark text-9xl font-light font-sans'>JAVASCRIPT</h1>
         {data.map((dat: { id: Key | null | undefined; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; body: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; }) => {
           return (
-            <h1 key={dat.id}>{dat.title}</h1>
+            <p key={dat.id}>{dat.title}</p>
           )
         })}
         <ul className="flex p-3">
