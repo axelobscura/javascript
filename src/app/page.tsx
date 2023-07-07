@@ -25,7 +25,7 @@ export default async function Home() {
                 <div className="news_img">
                   <img src={dat.urlToImage} alt="javascript en méxico" />
                 </div>
-                <p>{dat.title}</p>
+                <p className="text-lg">{dat.title}</p>
               </Link>
               
             )
