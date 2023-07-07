@@ -16,34 +16,28 @@ export default async function Home() {
 
   console.log(data);
   return (
-    <main className="flex min-h-screen">
-      <div className="relative flex flex-col items-center justify-center min-h-screen w-screen">
-        <div className="dash">
-          {data.articles.map((dat: { id: Key | null | undefined; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; body: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; url: string; urlToImage: string; }) => {
-            return (
-              <Link key={dat.id} href={dat.url} target="_blank" className="news">
-                <div className="news_img">
-                  <img src={dat.urlToImage} alt="javascript en méxico" />
-                </div>
-                <p className="text-lg">{dat.title}</p>
-              </Link>
-              
-            )
-          })}
+    <div className="container-fluid">
+      <div className="grid grid-cols-12">
+        <div className='col-span-2'>
+          menu
         </div>
-        <ul className="flex p-3">
-          <li className="p-2">
-            <Link href="/blog">
-              <BsHCircleFill size={'2em'} style={{'color':'#111'}}/>
-            </Link>
-          </li>
-          <li className="p-2">
-            <Link href='/contacto'>
-              <BsFillRecordCircleFill size={'2em'} style={{'color':'#111'}}/>
-            </Link>
-          </li>
-        </ul>
+        <div className='col-span-10 contenido_feat'>
+          <div className="dash">
+            {data.articles.map((dat: { id: Key | null | undefined; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; body: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; url: string; urlToImage: string; }) => {
+              return (
+                <Link key={dat.id} href={dat.url} target="_blank" className="news">
+                  <div className="news_img">
+                    <img src={dat.urlToImage} alt="javascript en méxico" />
+                  </div>
+                  <p className="text-lg">{dat.title}</p>
+                </Link>
+                
+              )
+            })}
+          </div>
+        </div>
       </div>
-    </main>
+    </div>
+    
   )
 }

@@ -20,7 +20,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #ebd02f;
+  background: #111111;
 }
 
 .menu_categorias {
@@ -38,15 +38,15 @@ body {
 a.news {
   width: 100%;
   text-align: center;
-  background: #333;
+  background: #121212;
   text-transform: uppercase;
   display: block;
   transition: all 1s;
-  border: 20px solid #000;
+  border: 10px solid #000;
 }
 
 a.news p {
-  padding: 10px 50px;
+  padding: 10px;
   min-height: 90px;
   display: flex;
   align-items: center;
@@ -61,11 +61,15 @@ a.news:hover {
 .dash {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Creates three equal-width columns */
+  grid-template-columns: repeat(4, 1fr); /* Creates three equal-width columns */
   grid-gap: 10px;
 }
 
 .news_img {
   height: 150px;
   overflow: hidden;
+}
+
+.contenido_feat {
+  background: #111;
 }
