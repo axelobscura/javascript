@@ -34,3 +34,13 @@ body {
 .contacto {
   background: #111;
 }
+
+a.news {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background: #333;
+  text-transform: uppercase;
+  margin: 1px;
+  display: block;
+}

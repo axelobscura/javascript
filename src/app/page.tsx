@@ -4,11 +4,10 @@ import { BsFillRecordCircleFill, BsHCircleFill } from "react-icons/bs";
 
 // d6e94ae6348c44ab9b20c475613aae01
 async function getData() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+  const res = await fetch('https://newsapi.org/v2/everything?q=apple&from=2023-07-05&to=2023-07-05&sortBy=popularity&apiKey=d6e94ae6348c44ab9b20c475613aae01')
   if (!res.ok) {
     throw new Error('Failed to fetch data')
   }
- 
   return res.json()
 }
 
@@ -20,9 +19,12 @@ export default async function Home() {
     <main className="flex min-h-screen">
       <div className="relative flex flex-col items-center justify-center min-h-screen w-screen">
         <h1 className='text-gray-dark text-9xl font-light font-sans'>JAVASCRIPT</h1>
-        {data.map((dat: { id: Key | null | undefined; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; body: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; }) => {
+        {data.articles.map((dat: { id: Key | null | undefined; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; body: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; url: string; }) => {
           return (
-            <p key={dat.id}>{dat.title}</p>
+            <Link key={dat.id} href={dat.url} target="_blank" className="news">
+              <p>{dat.title}</p>
+            </Link>
+            
           )
         })}
         <ul className="flex p-3">
