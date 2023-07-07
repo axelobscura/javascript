@@ -42,10 +42,15 @@ a.news {
   text-transform: uppercase;
   display: block;
   transition: all 1s;
+  border: 20px solid #000;
 }
 
 a.news p {
-  padding: 10px;
+  padding: 10px 50px;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 a.news:hover {
@@ -57,4 +62,9 @@ a.news:hover {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Creates three equal-width columns */
   grid-gap: 10px;
+}
+
+.news_img {
+  height: 150px;
+  overflow: hidden;
 }

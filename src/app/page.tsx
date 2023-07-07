@@ -22,7 +22,9 @@ export default async function Home() {
           {data.articles.map((dat: { id: Key | null | undefined; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; body: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; url: string; urlToImage: string; }) => {
             return (
               <Link key={dat.id} href={dat.url} target="_blank" className="news">
-                <img src={dat.urlToImage} alt="javascript en méxico" />
+                <div className="news_img">
+                  <img src={dat.urlToImage} alt="javascript en méxico" />
+                </div>
                 <p>{dat.title}</p>
               </Link>
               
