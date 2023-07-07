@@ -43,4 +43,9 @@ a.news {
   text-transform: uppercase;
   margin: 1px;
   display: block;
+  transition: all 1s;
+}
+
+a.news:hover {
+  background: #0b0b0b;
 }
