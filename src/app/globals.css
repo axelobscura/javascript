@@ -38,14 +38,23 @@ body {
 a.news {
   width: 100%;
   text-align: center;
-  padding: 10px;
   background: #333;
   text-transform: uppercase;
-  margin: 1px;
   display: block;
   transition: all 1s;
 }
 
+a.news p {
+  padding: 10px;
+}
+
 a.news:hover {
   background: #0b0b0b;
+}
+
+.dash {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates three equal-width columns */
+  grid-gap: 10px;
 }
