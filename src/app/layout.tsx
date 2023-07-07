@@ -1,5 +1,6 @@
 import './globals.css'
 import { Rajdhani } from 'next/font/google'
+import GoogleAnalytics from './components/GoogleAnalytics'
 
 const rajdhani = Rajdhani({ 
   subsets: ['latin'],
@@ -22,6 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <GoogleAnalytics />
       <body className={rajdhani.className}>{children}</body>
     </html>
   )
