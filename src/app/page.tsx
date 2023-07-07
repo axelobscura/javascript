@@ -18,7 +18,6 @@ export default async function Home() {
   return (
     <main className="flex min-h-screen">
       <div className="relative flex flex-col items-center justify-center min-h-screen w-screen">
-        <h1 className='text-gray-dark text-9xl font-light font-sans'>JAVASCRIPT</h1>
         <div className="dash">
           {data.articles.map((dat: { id: Key | null | undefined; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; body: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; url: string; urlToImage: string; }) => {
             return (
