@@ -15,8 +15,6 @@ async function getData() {
 
 export default async function Home() {
   const data = await getData();
-
-  console.log(data);
   return (
     <div className="container-fluid">
       <div className="grid grid-cols-12">
@@ -50,6 +48,5 @@ export default async function Home() {
         </div>
       </div>
     </div>
-    
   )
 }
