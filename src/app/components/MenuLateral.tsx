@@ -2,7 +2,7 @@ import { BiLogoJavascript } from "react-icons/bi";
 
 export default function MenuLateral(){
     return (
-        <div className="col-span-3 flex fle-col items-center justify-center">
+        <div className="col-span-3 flex flex-col items-center justify-center">
             <BiLogoJavascript />
             <hr/>
             <nav className="flex flex-col bg-gray-100 w-full">
