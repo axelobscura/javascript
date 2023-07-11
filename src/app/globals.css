@@ -38,11 +38,12 @@ body {
 a.news {
   width: 100%;
   text-align: center;
-  background: #121212;
+  background: #333;
   text-transform: uppercase;
   display: block;
   transition: all 1s;
-  border: 10px solid #000;
+  border: 1px solid #777;
+  border-radius: 20px;
 }
 
 a.news p {
@@ -68,6 +69,7 @@ a.news:hover {
 .news_img {
   height: 150px;
   overflow: hidden;
+  border-radius: 20px;
 }
 
 .contenido_feat {
