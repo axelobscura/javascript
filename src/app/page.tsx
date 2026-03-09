@@ -1,4 +1,5 @@
 import Image from "next/image"
+import MenuEntrada from "./components/MenuEntrada";
 
 export default async function Home() {
   return (
@@ -17,6 +18,9 @@ export default async function Home() {
           <h2 className="px-20 py-3 text-2xl font-light text-white bg-black border-4 shadow-lg border-yellow border-spacing-24">Celebrando</h2>
           <h1 className="p-5 font-bold text-7xl">30 años de Javascript</h1>
           <p className="text-2xl">más de 1,444,723 soluciones en México y el Mundo</p>
+          <div>
+            <MenuEntrada />
+          </div>
         </div>
       </div>
     </div>
