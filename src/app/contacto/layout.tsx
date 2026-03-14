@@ -1,5 +1,5 @@
-import '../globals.css'
 import { Rajdhani } from 'next/font/google'
+import TopBar from '../components/TopBar'
 
 const rajdhani = Rajdhani({ 
   subsets: ['latin'],
@@ -8,7 +8,7 @@ const rajdhani = Rajdhani({
 })
 
 export const metadata = {
-  title: 'JAVASCRIPT ARTÍCULOS NOTICIAS Y TUTORIALES',
+  title: 'CONTACTO JAVASCRIPT ARTÍCULOS NOTICIAS Y TUTORIALES',
   description: 'Sitio web de desarrollo de JavaScript: Aprende, crea y domina el mundo de JavaScript. Descubre tutoriales, guías y recursos para desarrollar aplicaciones web, juegos y mucho más. Mantente al día con las últimas técnicas y tendencias en el ámbito del desarrollo de JavaScript.',
   icons: {
     icon: '/favicon.png',
@@ -21,9 +21,15 @@ export default function Layout({
   children: React.ReactNode
 }) {
   return (
-    <div className={`container-fluid ${rajdhani.className}`}>
-      <div className="grid contacto grid-cols-12">
-        {children}
+    <div>
+      <TopBar />
+      <div className='grid grid-cols-[30%_70%]'>
+        <div className='bg-gray-dark'>
+
+        </div>
+        <div>
+          {children}
+        </div>
       </div>
     </div>
   )
