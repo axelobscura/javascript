@@ -1,5 +1,6 @@
 import { Rajdhani } from 'next/font/google'
 import TopBar from '../components/TopBar'
+import FooterInterno from '../components/FooterInterno'
 
 const rajdhani = Rajdhani({ 
   subsets: ['latin'],
@@ -21,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <div>
+    <div className='h-screen'>
       <TopBar />
       <div className='grid grid-cols-[30%_70%]'>
         <div className='bg-gray-dark'>
@@ -31,6 +32,7 @@ export default function RootLayout({
           {children}
         </div>
       </div>
+      <FooterInterno />
     </div>
   )
 }
