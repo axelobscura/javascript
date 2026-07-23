@@ -1,6 +1,15 @@
-import { resume } from '../../data/resume'
+import Link from 'next/link'
+import { getResume, resolveResumeLang, type ResumeLang } from '../../data/resume'
 
-export default function Proyectos() {
+type PageProps = {
+  searchParams?: { lang?: string }
+}
+
+export default function Proyectos({ searchParams }: PageProps) {
+  const lang = resolveResumeLang(searchParams?.lang)
+  const resume = getResume(lang)
+  const { ui } = resume
+
   return (
     <main className="relative px-5 py-12 md:px-8 md:py-16">
       <div
@@ -9,18 +18,21 @@ export default function Proyectos() {
       />
 
       <div className="relative mx-auto max-w-6xl">
-        {/* Hero */}
         <header className="border-b border-js-yellow/15 pb-12">
-          <p className="font-display text-xs tracking-[0.4em] text-js-yellow uppercase">
-            Curriculum · Sr Full Stack
-          </p>
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <p className="font-display text-xs tracking-[0.4em] text-js-yellow uppercase">
+              {ui.eyebrow}
+            </p>
+            <LangToggle lang={lang} />
+          </div>
+
           <h1 className="mt-4 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-gradient-js sm:text-6xl md:text-7xl">
             {resume.name}
           </h1>
           <p className="mt-4 font-display text-sm tracking-[0.28em] text-js-ink uppercase sm:text-base">
             {resume.title}
             <span className="text-js-yellow"> · </span>
-            {resume.years} years
+            {resume.years} {resume.yearsLabel}
             <span className="text-js-yellow"> · </span>
             {resume.location}
           </p>
@@ -56,13 +68,12 @@ export default function Proyectos() {
           </ul>
         </header>
 
-        {/* Skills */}
         <section className="border-b border-js-yellow/15 py-12">
           <p className="font-display text-xs tracking-[0.35em] text-js-yellow uppercase">
-            Stack
+            {ui.stackEyebrow}
           </p>
           <h2 className="mt-3 font-display text-2xl font-bold tracking-tight text-js-ink sm:text-3xl">
-            Technical expertise
+            {ui.stackTitle}
           </h2>
           <div className="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {resume.skills.map((group) => (
@@ -78,13 +89,12 @@ export default function Proyectos() {
           </div>
         </section>
 
-        {/* Experience */}
         <section className="border-b border-js-yellow/15 py-12">
           <p className="font-display text-xs tracking-[0.35em] text-js-yellow uppercase">
-            Experience
+            {ui.experienceEyebrow}
           </p>
           <h2 className="mt-3 font-display text-2xl font-bold tracking-tight text-js-ink sm:text-3xl">
-            Professional timeline
+            {ui.experienceTitle}
           </h2>
 
           <ol className="mt-10 space-y-0">
@@ -130,14 +140,13 @@ export default function Proyectos() {
           </ol>
         </section>
 
-        {/* Education + languages */}
         <section className="grid gap-12 border-b border-js-yellow/15 py-12 lg:grid-cols-2">
           <div>
             <p className="font-display text-xs tracking-[0.35em] text-js-yellow uppercase">
-              Education
+              {ui.educationEyebrow}
             </p>
             <h2 className="mt-3 font-display text-2xl font-bold tracking-tight text-js-ink">
-              Academic path
+              {ui.educationTitle}
             </h2>
             <ul className="mt-8 space-y-6">
               {resume.education.map((ed) => (
@@ -158,29 +167,29 @@ export default function Proyectos() {
 
           <div>
             <p className="font-display text-xs tracking-[0.35em] text-js-yellow uppercase">
-              Languages
+              {ui.languagesEyebrow}
             </p>
             <h2 className="mt-3 font-display text-2xl font-bold tracking-tight text-js-ink">
-              Communication
+              {ui.languagesTitle}
             </h2>
             <ul className="mt-8 space-y-4">
-              {resume.languages.map((lang) => (
+              {resume.languages.map((item) => (
                 <li
-                  key={lang.name}
+                  key={item.name}
                   className="flex items-baseline justify-between gap-4 border-b border-js-yellow/10 pb-3"
                 >
                   <span className="font-display text-sm tracking-[0.15em] text-js-ink uppercase">
-                    {lang.name}
+                    {item.name}
                   </span>
                   <span className="text-sm font-light text-js-muted">
-                    {lang.level}
+                    {item.level}
                   </span>
                 </li>
               ))}
             </ul>
 
             <p className="mt-10 font-display text-xs tracking-[0.35em] text-js-yellow uppercase">
-              Selected coursework
+              {ui.coursesEyebrow}
             </p>
             <ul className="mt-4 space-y-2">
               {resume.courses.map((course) => (
@@ -195,30 +204,62 @@ export default function Proyectos() {
           </div>
         </section>
 
-        {/* CTA */}
         <section className="py-12">
           <p className="font-display text-xs tracking-[0.35em] text-js-yellow uppercase">
-            Next step
+            {ui.ctaEyebrow}
           </p>
           <h2 className="mt-3 max-w-xl font-display text-2xl font-bold tracking-tight text-js-ink sm:text-3xl">
-            Open to senior full-stack roles and architecture collaborations.
+            {ui.ctaTitle}
           </h2>
           <div className="mt-8 flex flex-wrap gap-4">
             <a
-              href={`mailto:${resume.email}?subject=Opportunity%20—%20Senior%20Full%20Stack`}
+              href={`mailto:${resume.email}?subject=${encodeURIComponent(ui.mailSubject)}`}
               className="bg-js-yellow px-8 py-3.5 font-display text-sm font-bold tracking-widest text-js-black uppercase transition-transform hover:scale-[1.02]"
             >
-              Contact me
+              {ui.contactMe}
             </a>
             <a
               href="/contacto"
               className="border border-js-yellow/50 px-8 py-3.5 font-display text-sm font-medium tracking-widest text-js-ink uppercase transition-colors hover:border-js-yellow hover:bg-js-yellow/10"
             >
-              Message form
+              {ui.messageForm}
             </a>
           </div>
         </section>
       </div>
     </main>
+  )
+}
+
+function LangToggle({ lang }: { lang: ResumeLang }) {
+  const options: { id: ResumeLang; label: string; href: string }[] = [
+    { id: 'es', label: 'ES', href: '/proyectos?lang=es' },
+    { id: 'en', label: 'EN', href: '/proyectos?lang=en' },
+  ]
+
+  return (
+    <div
+      role="group"
+      aria-label={lang === 'es' ? 'Idioma del currículum' : 'Resume language'}
+      className="flex border border-js-yellow/40"
+    >
+      {options.map((option) => {
+        const active = option.id === lang
+        return (
+          <Link
+            key={option.id}
+            href={option.href}
+            className={`px-3 py-1.5 font-display text-[10px] tracking-[0.28em] uppercase transition-colors ${
+              active
+                ? 'bg-js-yellow text-js-black'
+                : 'text-js-muted hover:text-js-yellow'
+            }`}
+            aria-current={active ? 'true' : undefined}
+          >
+            {option.label}
+          </Link>
+        )
+      })}
+    </div>
   )
 }
