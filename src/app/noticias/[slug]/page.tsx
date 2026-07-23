@@ -33,13 +33,13 @@ export default async function NoticiaDetalle({ params }: PageProps) {
   }
 
   return (
-    <main className="relative min-h-[70vh] px-5 py-12 md:px-8 md:py-16">
+    <main className="relative mx-auto min-h-[70vh] max-w-6xl px-5 py-12 md:px-8 md:py-16">
       <div
         className="pointer-events-none absolute -left-20 top-0 h-64 w-64 rounded-full bg-js-yellow/10 blur-[80px]"
         aria-hidden
       />
 
-      <article className="relative mx-auto max-w-3xl">
+      <article className="relative max-w-3xl">
         <Link
           href="/noticias"
           className="font-display text-[10px] tracking-[0.28em] text-js-muted uppercase transition-colors hover:text-js-yellow"

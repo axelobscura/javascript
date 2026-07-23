@@ -7,13 +7,13 @@ export default async function Noticias() {
   const { noticias, error, sourceNote } = await getJavascriptNews()
 
   return (
-    <main className="relative min-h-[70vh] px-5 py-12 md:px-8 md:py-16">
+    <main className="relative mx-auto min-h-[70vh] max-w-6xl px-5 py-12 md:px-8 md:py-16">
       <div
         className="pointer-events-none absolute -left-20 top-0 h-64 w-64 rounded-full bg-js-yellow/10 blur-[80px]"
         aria-hidden
       />
 
-      <div className="relative mx-auto max-w-6xl">
+      <div className="relative">
         <p className="font-display text-xs tracking-[0.4em] text-js-yellow uppercase">
           En vivo · Mediastack
         </p>
