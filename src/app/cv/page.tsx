@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { getResume, resolveResumeLang, type ResumeLang } from '../../data/resume'
 
+const SHOW_EXPERIENCE = false
+
 type PageProps = {
   searchParams?: { lang?: string }
 }
@@ -89,56 +91,58 @@ export default function CV({ searchParams }: PageProps) {
           </div>
         </section>
 
-        <section className="border-b border-js-yellow/15 py-12">
-          <p className="font-display text-xs tracking-[0.35em] text-js-yellow uppercase">
-            {ui.experienceEyebrow}
-          </p>
-          <h2 className="mt-3 font-display text-2xl font-bold tracking-tight text-js-ink sm:text-3xl">
-            {ui.experienceTitle}
-          </h2>
+        {SHOW_EXPERIENCE ? (
+          <section className="border-b border-js-yellow/15 py-12">
+            <p className="font-display text-xs tracking-[0.35em] text-js-yellow uppercase">
+              {ui.experienceEyebrow}
+            </p>
+            <h2 className="mt-3 font-display text-2xl font-bold tracking-tight text-js-ink sm:text-3xl">
+              {ui.experienceTitle}
+            </h2>
 
-          <ol className="mt-10 space-y-0">
-            {resume.experience.map((job) => (
-              <li
-                key={`${job.company}-${job.period}`}
-                className="border-t border-js-yellow/10 py-10 first:border-t-0 first:pt-0"
-              >
-                <div className="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between md:gap-8">
-                  <div>
-                    <h3 className="font-display text-xl font-semibold text-js-ink sm:text-2xl">
-                      {job.company}
-                    </h3>
-                    <p className="mt-1 font-display text-[11px] tracking-[0.22em] text-js-yellow uppercase">
-                      {job.role}
-                    </p>
+            <ol className="mt-10 space-y-0">
+              {resume.experience.map((job) => (
+                <li
+                  key={`${job.company}-${job.period}`}
+                  className="border-t border-js-yellow/10 py-10 first:border-t-0 first:pt-0"
+                >
+                  <div className="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between md:gap-8">
+                    <div>
+                      <h3 className="font-display text-xl font-semibold text-js-ink sm:text-2xl">
+                        {job.company}
+                      </h3>
+                      <p className="mt-1 font-display text-[11px] tracking-[0.22em] text-js-yellow uppercase">
+                        {job.role}
+                      </p>
+                    </div>
+                    <time className="shrink-0 font-display text-[11px] tracking-[0.2em] text-js-muted uppercase">
+                      {job.period}
+                    </time>
                   </div>
-                  <time className="shrink-0 font-display text-[11px] tracking-[0.2em] text-js-muted uppercase">
-                    {job.period}
-                  </time>
-                </div>
 
-                <ul className="mt-5 space-y-3">
-                  {job.bullets.map((bullet) => (
-                    <li
-                      key={bullet}
-                      className="flex gap-3 text-sm font-light leading-relaxed text-js-muted sm:text-base"
-                    >
-                      <span
-                        className="mt-2 h-1.5 w-1.5 shrink-0 bg-js-yellow"
-                        aria-hidden
-                      />
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
+                  <ul className="mt-5 space-y-3">
+                    {job.bullets.map((bullet) => (
+                      <li
+                        key={bullet}
+                        className="flex gap-3 text-sm font-light leading-relaxed text-js-muted sm:text-base"
+                      >
+                        <span
+                          className="mt-2 h-1.5 w-1.5 shrink-0 bg-js-yellow"
+                          aria-hidden
+                        />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-                <p className="mt-5 text-xs font-light tracking-wide text-js-muted/80">
-                  {job.stack.join(' · ')}
-                </p>
-              </li>
-            ))}
-          </ol>
-        </section>
+                  <p className="mt-5 text-xs font-light tracking-wide text-js-muted/80">
+                    {job.stack.join(' · ')}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </section>
+        ) : null}
 
         <section className="grid gap-12 border-b border-js-yellow/15 py-12 lg:grid-cols-2">
           <div>
