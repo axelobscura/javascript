@@ -2,15 +2,15 @@ import TopBar from '../components/TopBar'
 import FooterInterno from '../components/FooterInterno'
 
 export const metadata = {
-  title: 'Contacto — JavaScript México',
+  title: 'CV — Axel Laurent Obscura Sarzotti | JavaScript México',
   description:
-    'Contacta a JavaScript México: noticias, colaboraciones, tips de comunidad y oportunidades full-stack senior en CDMX.',
+    'Currículum de Axel Laurent Obscura Sarzotti — Desarrollador Full Stack Senior con 22+ años en GraphQL, Node.js, React, Next.js y cloud. Disponible en español e inglés.',
   icons: {
     icon: '/favicon.png',
   },
 }
 
-export default function ContactoLayout({
+export default function CVLayout({
   children,
 }: {
   children: React.ReactNode
