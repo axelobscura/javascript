@@ -1,36 +1,26 @@
-import { Rajdhani } from 'next/font/google'
 import TopBar from '../components/TopBar'
-
-const rajdhani = Rajdhani({ 
-  subsets: ['latin'],
-  weight:["300", "500", "700"],
-  variable: '--font-rajdhani',
-})
+import FooterInterno from '../components/FooterInterno'
 
 export const metadata = {
-  title: 'CONTACTO JAVASCRIPT ARTÍCULOS NOTICIAS Y TUTORIALES',
-  description: 'Sitio web de desarrollo de JavaScript: Aprende, crea y domina el mundo de JavaScript. Descubre tutoriales, guías y recursos para desarrollar aplicaciones web, juegos y mucho más. Mantente al día con las últimas técnicas y tendencias en el ámbito del desarrollo de JavaScript.',
+  title: 'Contacto — JavaScript México',
+  description:
+    'Contacta al hub de noticias JavaScript en español. Colaboraciones, tips y propuestas.',
   icons: {
     icon: '/favicon.png',
   },
 }
 
-export default function Layout({
+export default function ContactoLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <div>
+    <div className="flex min-h-screen flex-col bg-mesh">
+      <div className="pointer-events-none fixed inset-0 bg-grid opacity-60" aria-hidden />
       <TopBar />
-      <div className='grid grid-cols-[30%_70%]'>
-        <div className='bg-gray-dark'>
-
-        </div>
-        <div>
-          {children}
-        </div>
-      </div>
+      <div className="relative z-10 flex-1">{children}</div>
+      <FooterInterno />
     </div>
   )
 }

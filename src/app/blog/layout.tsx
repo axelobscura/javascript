@@ -1,36 +1,26 @@
-import '../globals.css'
-import { Rajdhani } from 'next/font/google'
-
-const rajdhani = Rajdhani({ 
-  subsets: ['latin'],
-  weight:["300", "500", "700"],
-  variable: '--font-rajdhani',
-})
+import TopBar from '../components/TopBar'
+import FooterInterno from '../components/FooterInterno'
 
 export const metadata = {
-  title: 'JAVASCRIPT ARTÍCULOS NOTICIAS Y TUTORIALES',
-  description: 'Sitio web de desarrollo de JavaScript: Aprende, crea y domina el mundo de JavaScript. Descubre tutoriales, guías y recursos para desarrollar aplicaciones web, juegos y mucho más. Mantente al día con las últimas técnicas y tendencias en el ámbito del desarrollo de JavaScript.',
+  title: 'Blog — JavaScript México',
+  description:
+    'Blog de JavaScript en español: tutoriales, noticias y tendencias del ecosistema.',
   icons: {
     icon: '/favicon.png',
   },
 }
 
-export default function Layout({
+export default function BlogLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <div className={`container-fluid ${rajdhani.className}`}>
-      <div className="grid grid-cols-6">
-        <div className='menu_categorias'>
-        </div>
-        <div className='col-span-4 contenido_articulos'>
-          {children}
-        </div>
-        <div className='menu_categorias'>
-        </div>
-      </div>
+    <div className="flex min-h-screen flex-col bg-mesh">
+      <div className="pointer-events-none fixed inset-0 bg-grid opacity-60" aria-hidden />
+      <TopBar />
+      <div className="relative z-10 flex-1">{children}</div>
+      <FooterInterno />
     </div>
   )
 }

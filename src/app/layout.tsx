@@ -1,16 +1,23 @@
 import './globals.css'
-import { Rajdhani } from 'next/font/google'
+import { Orbitron, Exo_2 } from 'next/font/google'
 import GoogleAnalytics from './components/GoogleAnalytics'
 
-const rajdhani = Rajdhani({ 
+const orbitron = Orbitron({
   subsets: ['latin'],
-  weight:["300", "500", "700"],
-  variable: '--font-rajdhani',
+  weight: ['500', '700', '800'],
+  variable: '--font-display',
+})
+
+const exo = Exo_2({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-body',
 })
 
 export const metadata = {
-  title: 'JAVASCRIPT PROFESIONAL EN MÉXICO - Aprende, Crea y Domina el Mundo de JavaScript, desarrollo de aplicaciones web, juegos y más',
-  description: 'Desarrollo de JavaScript en México: Aprende, crea y domina el mundo de JavaScript. Descubre tutoriales, guías y recursos para desarrollar aplicaciones web, juegos y mucho más. Mantente al día con las últimas técnicas y tendencias en el ámbito del desarrollo de JavaScript. Únete a nuestra comunidad y lleva tus habilidades de JavaScript al siguiente nivel.',
+  title: 'JavaScript México — Hub de noticias JavaScript en español',
+  description:
+    'El hub de noticias, artículos y proyectos JavaScript en español. Mantente al día con frameworks, herramientas y tendencias del ecosistema JS desde México.',
   icons: {
     icon: '/favicon.png',
   },
@@ -22,9 +29,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <GoogleAnalytics />
-      <body className={rajdhani.className}>{children}</body>
+      <body className={`${orbitron.variable} ${exo.variable} font-body antialiased`}>
+        {children}
+      </body>
     </html>
   )
 }

@@ -1,0 +1,183 @@
+export const resume = {
+  name: 'Axel Laurent Obscura Sarzotti',
+  title: 'Senior Full Stack Developer',
+  years: '22+',
+  location: 'Ciudad de México',
+  email: 'axosar@gmail.com',
+  phone: '+52 55 3220 6321',
+  summary:
+    'Senior Full Stack Developer with 22+ years designing and shipping scalable web and mobile products. Specialized in GraphQL (Apollo, NestJS), Node.js, React/Next.js, and cloud platforms (AWS, Azure, GCP). Proven track record leading architecture migrations, AI/ML integrations, and mentoring engineering teams through the full delivery lifecycle.',
+  highlights: [
+    'GraphQL APIs at scale — Apollo, NestJS, federation, Dataloader',
+    'Full-stack product delivery — React, Next.js, Angular, React Native',
+    'Cloud & AI platforms — AWS, Azure, GCP, RAG / LangChain.js',
+  ],
+  skills: [
+    {
+      label: 'Frontend',
+      items: [
+        'TypeScript',
+        'React',
+        'Next.js',
+        'Angular',
+        'Vue',
+        'React Native',
+        'Redux',
+        'Tailwind',
+        'SASS',
+      ],
+    },
+    {
+      label: 'Backend',
+      items: [
+        'Node.js',
+        'Express',
+        'NestJS',
+        'GraphQL',
+        'Apollo',
+        'REST',
+        'Python',
+        'Java',
+        'PHP',
+      ],
+    },
+    {
+      label: 'Data',
+      items: ['PostgreSQL', 'MongoDB', 'MySQL', 'SQL Server', 'Oracle'],
+    },
+    {
+      label: 'Cloud & DevOps',
+      items: ['AWS', 'Azure', 'GCP', 'CI/CD', 'Git', 'GitLab', 'Docker'],
+    },
+    {
+      label: 'AI & Product',
+      items: ['LangChain.js', 'RAG', 'TensorFlow.js', 'Agile', 'Mentoring'],
+    },
+  ],
+  experience: [
+    {
+      company: 'Globant Technologies',
+      role: 'Sr. Full Stack Developer',
+      period: 'Apr 2022 — 2026',
+      bullets: [
+        'Architected high-performance GraphQL APIs with Node.js (Apollo Server / NestJS) to orchestrate data for machine learning microservices.',
+        'Solved N+1 query issues with Dataloader and custom directives for field-level authorization and caching.',
+        'Built React / Next.js / Angular interfaces with AI-powered components and GraphQL Subscriptions for real-time model status.',
+        'Shipped RAG systems with LangChain.js and vector databases (Pinecone, Milvus) to improve chatbot retrieval quality.',
+        'Deployed AI services, serverless functions, and containers across AWS, Azure, and GCP; mentored juniors through code reviews.',
+      ],
+      stack: [
+        'Node.js',
+        'GraphQL',
+        'Apollo',
+        'NestJS',
+        'React',
+        'Next.js',
+        'Python',
+        'AWS',
+      ],
+    },
+    {
+      company: 'Instituto Mexicano del Cemento y del Concreto',
+      role: 'Sr. Full Stack Developer · Team Lead',
+      period: 'Apr 2011 — 2022',
+      bullets: [
+        'Led the migration from monolithic REST to a federated GraphQL gateway — cutting mobile data usage ~40% and improving frontend velocity.',
+        'Migrated systems to AWS (EC2, auto-scaling, VPNs, security groups, load balancers, CloudFormation).',
+        'Delivered full-stack React Native apps with Redux/Context and GraphQL for efficient mobile sync.',
+        'Partnered with UX on HTML5 / CSS3 / React / Next.js experiences; owned architecture docs and automation details.',
+      ],
+      stack: [
+        'GraphQL',
+        'Node.js',
+        'React',
+        'Next.js',
+        'React Native',
+        'Java',
+        'AWS',
+      ],
+    },
+    {
+      company: 'Nagarro Solutions',
+      role: 'Full Stack Developer',
+      period: 'Apr 2016 — Jan 2017',
+      bullets: [
+        'Built MEAN-stack features and GraphQL endpoints powering dynamic Angular experiences.',
+        'Delivered responsive SPAs with Angular and React Native; REST APIs with Node.js / Express.',
+        'Practiced TDD and clean code with Git-based collaboration and Chrome DevTools debugging.',
+      ],
+      stack: ['React', 'Angular', 'GraphQL', 'Node.js', 'MongoDB', 'AWS'],
+    },
+    {
+      company: 'Pengostores',
+      role: 'Full Stack Developer',
+      period: 'Jan 2009 — Mar 2011',
+      bullets: [
+        'Shipped Magento / Zend / PHP storefronts with AngularJS, HTML5, CSS3, and SASS.',
+        'Built fault-tolerant WordPress sites on AWS and interactive UI with jQuery / Polymer components.',
+        'Maintained high-availability LAMP stacks and SQL procedures for reporting and validation flows.',
+      ],
+      stack: ['PHP', 'Magento', 'AngularJS', 'MySQL', 'AWS', 'SASS'],
+    },
+    {
+      company: 'RentaOpciones',
+      role: 'Full Stack Developer',
+      period: 'Jul 2008 — Jan 2011',
+      bullets: [
+        'Delivered a full Joomla CMS for real estate with PHP, MySQL, and jQuery modules.',
+        'Designed REST APIs with Node.js / Express; practiced TDD and BDD with Mocha / Chai.',
+      ],
+      stack: ['PHP', 'Joomla', 'Node.js', 'MySQL', 'Mocha'],
+    },
+    {
+      company: 'ADA Networks',
+      role: 'Full Stack Developer',
+      period: 'Jan 2005 — Feb 2008',
+      bullets: [
+        'Built portal UIs with HTML, CSS, JavaScript, and jQuery; applied OOP and design patterns.',
+        'Developed SQL Server procedures, triggers, and tables; collaborated onsite with clients on business flows.',
+      ],
+      stack: ['JavaScript', 'ASP.NET', 'C#', 'SQL Server', 'PHP'],
+    },
+    {
+      company: 'Editorial Galas de México',
+      role: 'Full Stack Developer',
+      period: 'Jun 2003 — Dec 2004',
+      bullets: [
+        'Developed entertainment, e-commerce, and corporate sites with Zend, WordPress, PHP, and MySQL.',
+        'Built frontend experiences and mini-games with HTML5, CSS3, and JavaScript.',
+      ],
+      stack: ['PHP', 'Zend', 'WordPress', 'MySQL', 'JavaScript'],
+    },
+  ],
+  education: [
+    {
+      degree: 'Master’s in Visual Arts — Web Design & Development',
+      school: 'Universidad Nacional Autónoma de México (UNAM)',
+      year: '2008',
+    },
+    {
+      degree: 'Bachelor’s in Graphic & Digital Communications',
+      school: 'Universidad Autónoma Metropolitana (UAM)',
+      year: '2004',
+    },
+    {
+      degree: 'Master’s in System Engineering',
+      school: 'Universidad Internacional de La Rioja (UNIR)',
+      year: 'In progress',
+    },
+  ],
+  languages: [
+    { name: 'Spanish', level: 'Native' },
+    { name: 'English', level: 'Professional (C90 / R97 / S93)' },
+    { name: 'French', level: 'Advanced (C85 / R72 / S87)' },
+  ],
+  courses: [
+    'GraphQL with React — Stephen Grider',
+    'Node.js, Express, MongoDB Bootcamp — Jonas Schmedtmann',
+    'Modern React & React Native with Redux — Stephen Grider',
+    'Angular — The Complete Guide — Maximilian Schwarzmüller',
+    'JavaScript: Understanding the Weird Parts — Anthony Alicea',
+    'Object Oriented Design in Java — Imtiaz Ahmad',
+  ],
+} as const
